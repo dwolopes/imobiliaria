@@ -20,10 +20,14 @@
 <body>
     <div id="app">
       <header>
-        @include('layouts._site._nav') 
+        @include('layouts._site._nav')
       </header>
+      <main>
         @yield('content')
+      </main>
     </div>
+
+
 
 
     <footer class="page-footer blue">
@@ -36,9 +40,9 @@
           <div class="col l4 offset-l2 s12">
             <h5 class="white-text">Links</h5>
             <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">HOME</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Sobre</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Contato</a></li>
+              <li><a class="grey-text text-lighten-3" href="{{ route('site.home') }}">HOME</a></li>
+              <li><a class="grey-text text-lighten-3" href="{{ route('site.sobre') }}">Sobre</a></li>
+              <li><a class="grey-text text-lighten-3" href="{{ route('site.contato') }}">Contato</a></li>
             </ul>
           </div>
         </div>

@@ -9,11 +9,19 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
-    return view('site.home');
-});
+	return view('site.home');
+})->name('site.home');
+
+Route::get('/sobre', function () {
+	return view('site.sobre');
+})->name('site.sobre');
+
+Route::get('/contato', function () {
+	return view('site.contato');
+})->name('site.contato');
 
 Auth::routes();
 
