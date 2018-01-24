@@ -17,19 +17,13 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
 </head>
-<body>
-    <div id="app">
-      <header>
-        @include('layouts._site._nav')
-      </header>
-      <main>
-        @yield('content')
-      </main>
-    </div>
-
-
-
-
+<body id="app">
+    <header>
+      @include('layouts._site._nav')
+    </header>
+    <main>
+      @yield('content')
+    </main>
     <footer class="page-footer blue">
       <div class="container">
         <div class="row">

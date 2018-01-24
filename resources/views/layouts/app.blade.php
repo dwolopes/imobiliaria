@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
@@ -17,26 +17,33 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
 </head>
-<body>
-    <div id="app">
+<body id="app">
         
-      <nav>
-        <div class="nav-wrapper blue">
-            <div class="container">
-              <a href="#!" class="brand-logo">Logo</a>
-              <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-              <ul class="right hide-on-med-and-down">
-                <li><a href="sass.html">Home</a></li>
-              </ul>
-              <ul class="side-nav" id="mobile-demo">
-                <li><a href="sass.html">Home</a></li>
-              </ul>
-            </div>
-        </div>
-      </nav>
-
+    @include('layouts._admin._nav')
+    <main>
         @yield('content')
-    </div>
+    </main>
+    <footer class="page-footer blue">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">SisAdmin</h5>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="{{ route('site.home') }}">SITE</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2016 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
 
     <!-- Scripts -->
     <script type="text/javascript" src="{{asset('lib/jquery/dist/jquery.js')}}"></script>

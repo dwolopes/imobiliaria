@@ -27,6 +27,14 @@ Route::get('/imovel/{id}/{titulo?}', function () {
 	return view('site.imovel');
 })->name('site.imovel');
 
-Auth::routes();
+//Auth::routes();
 
+/*Admin routes*/
+
+Route::get('/admin/login', function () {
+	return view('admin.login.index');
+})->name('admin.login.index');
+
+
+/*Rota página inicial*/
 Route::get('/home', 'HomeController@index')->name('home');
