@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -23,5 +24,11 @@ class UsuarioController extends Controller {
 	public function sair() {
 		Auth::logout();
 		return redirect()->route('admin.login');
+	}
+
+	public function index() {
+		$usuarios = User::all();
+		return view('admin.usuarios.index', compact('usuarios'));
+
 	}
 }

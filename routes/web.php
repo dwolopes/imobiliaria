@@ -45,6 +45,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('/admin/login/sair', 'Admin\UsuarioController@sair')->name('admin.login.sair')->middleware('auth');
 
+	Route::get('/admin/usuarios', 'Admin\UsuarioController@index')->name('admin.usuarios')->middleware('auth');
+
 });
 
 /*Rota página inicial*/
