@@ -39,7 +39,8 @@ Route::post('/admin/login', 'Admin\UsuarioController@login')->name('admin.login'
 
 Route::get('/admin', function () {
 	return view('admin.principal.index');
-})->name('admin.principal');
+})->name('admin.principal')->middleware('auth');
+
 
 /*Rota página inicial*/
 Route::get('/home', 'HomeController@index')->name('home');
