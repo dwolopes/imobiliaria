@@ -12,11 +12,16 @@ class UsuarioController extends Controller {
 		$dados = $request->all();
 
 		if (Auth::attempt(['email' => $dados['email'], 'password' => $dados['password']])) {
-			\Session::flash('mensagem_login', ['msg'=>'Login realizado com sucesso!', 'class'=>'green white-text']);
+			\Session::flash('mensagem_login', ['msg' => 'Login realizado com sucesso!', 'class' => 'green white-text']);
 			return redirect()->route('admin.principal');
 		}
 
-		\Session::flash('mensagem_login', ['msg'=>'Login ou senha inválidos!', 'class'=>'red white-text']);
+		\Session::flash('mensagem_login', ['msg' => 'Login ou senha inválidos!', 'class' => 'red white-text']);
+		return redirect()->route('admin.login');
+	}
+
+	public function sair() {
+		Auth::logout();
 		return redirect()->route('admin.login');
 	}
 }
