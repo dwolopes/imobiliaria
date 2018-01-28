@@ -51,6 +51,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::post('/admin/usuarios/salvar', 'Admin\UsuarioController@salvar')->name('admin.usuarios.salvar')->middleware('auth');
 
+	Route::get('/admin/usuarios/editar/{id}', 'Admin\UsuarioController@editar')->name('admin.usuarios.editar')->middleware('auth');
+
+	Route::put('/admin/usuarios/atualizar/{id}', 'Admin\UsuarioController@atualizar')->name('admin.usuarios.atualizar')->middleware('auth');
+
 });
 
 /*Rota página inicial*/
