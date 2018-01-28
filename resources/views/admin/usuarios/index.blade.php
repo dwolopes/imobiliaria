@@ -34,7 +34,7 @@
 						<td>{{ $usuario->email }}</td>
 						<td>
 							<a href="{{route('admin.usuarios.editar', $usuario->id)}}" class="btn orange">Editar</a>
-							<a href="#" class="btn red">Deletar</a>
+							<a href="javascript: if(confirm('Tem certeza que deseja deletar esse usuário?')){ window.location.href = '{{route('admin.usuarios.deletar', $usuario->id) }}' }" class="btn red">Deletar</a>
 						</td>
 					</tr>
 				@endforeach

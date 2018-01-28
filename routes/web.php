@@ -55,6 +55,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::put('/admin/usuarios/atualizar/{id}', 'Admin\UsuarioController@atualizar')->name('admin.usuarios.atualizar')->middleware('auth');
 
+	Route::get('admin/usuarios/deletar/{id}', 'Admin\UsuarioController@deletar')->name('admin.usuarios.deletar')->middleware('auth');
+
 });
 
 /*Rota página inicial*/
