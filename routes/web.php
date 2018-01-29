@@ -15,9 +15,14 @@ Route::get('/', function () {
 	return view('site.home');
 })->name('site.home');
 
-Route::get('/sobre', function () {
-	return view('site.sobre');
-})->name('site.sobre');
+/*Views usando banco de dados*/
+
+Route::get('/sobre', 'Site\PaginaController@sobre')->name('site.sobre');
+
+
+
+/*-------*/
+
 
 Route::get('/contato', function () {
 	return view('site.contato');
