@@ -62,6 +62,12 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('admin/usuarios/deletar/{id}', 'Admin\UsuarioController@deletar')->name('admin.usuarios.deletar')->middleware('auth');
 
+	Route::get('admin/paginas', 'Admin\PaginaController@index')->name('admin.paginas')->middleware('auth');
+
+	Route::get('admin/paginas/editar/{id}', 'Admin\PaginaController@editar')->name('admin.paginas.editar')->middleware('auth');
+
+	Route::put('admin/paginas/atualizar/{id}', 'Admin\PaginaController@atualizar')->name('admin.paginas.atualizar')->middleware('auth');
+
 });
 
 /*Rota página inicial*/
