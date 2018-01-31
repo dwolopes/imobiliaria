@@ -18,6 +18,8 @@ class PaginaController extends Controller
 
     public function editar($id)
     {
+    	$pagina = Pagina::find($id);
+    	return view('admin.paginas.editar', compact('pagina'));
 
     }
 
